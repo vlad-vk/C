@@ -1,6 +1,7 @@
 #!/bin/bash
 
 GCC=i586-mingw32msvc-gcc
+GCC=mingw32-gcc
 
 MD="-DWIN32 -DWINDOW"
 MD="-DWIN32"
