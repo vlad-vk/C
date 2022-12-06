@@ -292,7 +292,7 @@ _i  dbCreate(_i Sel, uc *dbName){
     memcpy(&BRec[Sel][0], &dbHead[Sel], DBHDLEN);
     
     // create db file
-    if((FDesk = open(dbName, O_BINARY|O_RDWR|O_CREAT|O_TRUNC)) < 0){
+    if((FDesk = open(dbName, O_BINARY|O_RDWR|O_CREAT|O_TRUNC, 0666)) < 0){
         dbDPrn("dbCreate: error open file [%s] in the area %d.\n", dbName, Sel);
         return(-23);
     }
