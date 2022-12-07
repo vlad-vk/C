@@ -3,15 +3,16 @@
 echo "Compiling programm..."
 
 OS=win
+OS=lin
 
-if [ "OS" == "lin" ] ; then
-# For Linux, the mingw-64 package must be installed:
-GCC=i686-w64-mingw32-gcc
-AR=i686-w64-mingw32-ar
+if [ "$OS" == "lin" ] ; then
+    # For Linux, the mingw-64 package must be installed:
+    GCC=i686-w64-mingw32-gcc
+    AR=i686-w64-mingw32-ar
 else
-# For Windows mingw:
-GCC=mingw32-gcc
-AR=mingw32-gcc-ar
+    # For Windows mingw:
+    GCC=mingw32-gcc
+    AR=mingw32-gcc-ar
 fi
 
 PRG="vkdbf"

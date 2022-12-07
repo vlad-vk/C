@@ -1,8 +1,8 @@
 // coding: cp866
 //---------------------------------------------------------------------------
 // выбор строки по переменной
-#include <allegro.h>
-#include <winalleg.h>
+//#include <allegro.h>
+//#include <winalleg.h>
 #include <winsock.h>
 #include <nb30.h>
 #include "../include.h"

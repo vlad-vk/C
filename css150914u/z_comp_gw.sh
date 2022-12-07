@@ -1,25 +1,27 @@
 #!/bin/bash
 
-GCC=i586-mingw32msvc-gcc
-GCC=mingw32-gcc
+PRG=codusgw
 
-MD="-DWIN32 -DWINDOW"
+GCC=i686-w64-mingw32-gcc
+
+#GCC=mingw32-gcc
+
 MD="-DWIN32"
+MD="-DWIN32 -DWINDOW -I./allegro/include"
 
 WD="-Wl,--subsystem,windows"
 WD=""
 
-DB=" -O2 -funroll-loops -ffast-math -fomit-frame-pointer"
+DB="-O2 -funroll-loops -ffast-math -fomit-frame-pointer"
+DB=""
 
 RC="0_res/codus.res"
 
-LF="-lalleg -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lole32 -ldinput \
-    -lddraw -ldxguid -lwinmm -ldsound -lwsock32 -lnetapi32 -lwinspool "
+LF="-lkernel32 -luser32 -lgdi32 -lcomdlg32 -lole32 -ldinput \
+    -lddraw -ldxguid -lwinmm -ldsound -lwsock32 -lnetapi32 -lwinspool \
+    ./allegro/lib/liballeg.a"
 
-if test -f 'codus.dae'; then rm codus.dae;    fi
-if test -f 'codus.dae'; then crcfl codus.dae; fi
-if test -f 'codus.o';   then rm codus.o;      fi
-
+$GCC ${DB} ${MD} -c -o codus.o codus.c
 $GCC ${DB} ${MD} -c -o anima/anima.o   anima/anima.c
 $GCC ${DB} ${MD} -c -o choic/choic.o   choic/choic.c
 $GCC ${DB} ${MD} -c -o dbstr/dbstr.o   dbstr/dbstr.c
@@ -31,14 +33,10 @@ $GCC ${DB} ${MD} -c -o drtcp/drtcpgw.o drtcp/drtcpgw.c
 $GCC ${DB} ${MD} -c -o polzn/polzn.o   polzn/polzn.c
 $GCC ${DB} ${MD} -c -o vkdbf/vkdbf.o   vkdbf/vkdbf.c
 
-$GCC ${DB} ${MD} -DWIN32 -o codusgw.exe codus.c \
+$GCC -o ${PRG}.exe codus.o \
 anima/anima.o choic/choic.o dbstr/dbstr.o drcom/isrgw.o drcom/drcomgw.o \
 drnbw/nbfngw.o drnbw/nbwsgw.o drtcp/drtcpgw.o polzn/polzn.o vkdbf/vkdbf.o \
 ${WD} ${RC} ${LF}
 
-[ -f ../codus/codus.deb ] && rm -f ../codus/codus.deb
-
-if test -f 'codusgw.exe'; then  mv  codusgw.exe ../codus/codusgw.exe; fi
-
 date
-echo -n "Press ENTER for contitue..."; read k;
+read -p "Press ENTER for contitue..." k;

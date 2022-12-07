@@ -1,7 +1,7 @@
 // coding: cp866
 //---------------------------------------------------------------------------
 // выбор строки по переменной
-#include <allegro.h>
+//#include <allegro.h>
 #include "../include.h"
 #include "../define.h"
 #include "drcom.h"
