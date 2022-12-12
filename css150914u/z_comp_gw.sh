@@ -3,17 +3,16 @@
 PRG=codusgw
 
 GCC=i686-w64-mingw32-gcc
-
-#GCC=mingw32-gcc
+GCC=mingw32-gcc
 
 MD="-DWIN32"
 MD="-DWIN32 -DWINDOW -I./allegro/include"
 
-WD="-Wl,--subsystem,windows"
 WD=""
+WD="-Wl,--subsystem,windows"
 
-DB="-O2 -funroll-loops -ffast-math -fomit-frame-pointer"
 DB=""
+DB="-O2 -funroll-loops -ffast-math -fomit-frame-pointer"
 
 RC="0_res/codus.res"
 

@@ -3,13 +3,10 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-   #include <io.h>
-   #include <conio.h>
-   #include <dos.h>
-   #include <dir.h>
-   #include <direct.h>
-   #include <process.h>
-   #include <mem.h>
+#include <conio.h>
+#include <direct.h>
+#include <process.h>
+#include <mem.h>
 
 #include <errno.h>
 #include <time.h>
@@ -24,8 +21,8 @@
 #include <unistd.h>
 #include <sys/stat.h>
 
-   #include  <windef.h>
-   #include  <nb30.h>
+#include  <windef.h>
+#include  <nb30.h>
 
 //---------------------------------------------------------------------------
 typedef FILE           vktFL;

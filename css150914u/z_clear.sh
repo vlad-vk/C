@@ -14,7 +14,8 @@ if test -f drnbw/nbfngw.o;  then rm -f drnbw/nbfngw.o; fi
 if test -f drnbw/nbwslx.o;  then rm -f drnbw/nbwslx.o; fi
 if test -f drnbw/nbwsdj.o;  then rm -f drnbw/nbwsdj.o; fi
 if test -f drnbw/nbwsgw.o;  then rm -f drnbw/nbwsgw.o; fi
-if test -f drtcp/drtcp.o;   then rm -f drtcp/drtcp.o; fi
+if test -f drtcp/drtcp.o;   then rm -f drtcp/drtcp.o;  fi
+if test -f drtcp/drtcpw.o;  then rm -f drtcp/drtcpw.o; fi
 if test -f polzn/polzn.o;   then rm -f polzn/polzn.o; fi
 if test -f vkdbf/vkdbf.o;   then rm -f vkdbf/vkdbf.o; fi
 if test -f codus.o;         then rm codus.o; fi
